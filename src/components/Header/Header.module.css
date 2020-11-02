@@ -1,0 +1,54 @@
+.header {
+    background-color: royalblue;
+}
+
+.contentWrapper {
+    display: grid;
+    grid-template-columns: max-content max-content;
+    justify-content: space-between;
+    align-content: end;
+    height: 100%;
+    width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px 0 14px;
+}
+
+.logoWrapper {
+    display: grid;
+    align-items: end;
+}
+
+.logo {
+    width: 50px;
+}
+
+.nameLogout {
+    display: grid;
+    grid-template-rows: max-content max-content;
+    justify-items: end;
+}
+
+.name {
+    font: bold 14px Verdana;
+    color: aliceblue;
+}
+
+.login {
+    font: bold 12px Verdana;
+    color: aliceblue;
+    cursor: pointer;
+}
+
+.login:hover {
+    text-decoration: underline;
+}
+
+.logout {
+    font: bold 10px Verdana;
+    color: aliceblue;
+    cursor: pointer;
+}
+
+.logout:hover {
+    text-decoration: underline;
+}

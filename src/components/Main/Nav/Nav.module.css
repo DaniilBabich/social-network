@@ -1,0 +1,12 @@
+.nav a {
+    display: block;
+    padding: 10px 20px;
+    border-radius: 3px;
+    font: bold 14px Verdana;
+    color: royalblue;
+}
+
+.nav a:hover {
+    background-color: royalblue;
+    color: aliceblue;
+}

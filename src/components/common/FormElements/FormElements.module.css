@@ -1,0 +1,47 @@
+.defaultWrapper {
+    display: grid;
+    grid-template-columns: max-content max-content;
+    align-items: end;
+}
+
+.longWrapper {
+    display: grid;
+    grid-template-columns: 1fr max-content;
+    align-items: end;
+}
+
+.defaultInput {
+    margin-top: -2px;
+    font: 12px Verdana;
+    border: 1px solid royalblue;
+}
+
+.defaultInput:focus {
+    border: 1px solid royalblue;
+    outline: none;
+}
+
+.nameInput {
+    margin-top: -2px;
+    font: bold 22px Verdana;
+    border: 1px solid royalblue;
+}
+
+.nameInput:focus {
+    border: 1px solid royalblue;
+    outline: none;
+}
+
+.inputError {
+    border: 1px solid red;
+}
+
+.inputError:focus {
+    border: 1px solid red;
+}
+
+.errorMessage {
+    margin-left: 5px;
+    font: 12px Verdana;
+    color: red;
+}

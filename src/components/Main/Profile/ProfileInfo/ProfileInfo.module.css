@@ -1,0 +1,44 @@
+.profileInfo {
+    display: grid;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: ivory;
+}
+
+.profileName {
+    font: bold 22px Verdana;
+}
+
+.myProfileName {
+    display: grid;
+    grid-template-columns: 1fr max-content;
+    align-items: start;
+}
+
+.profileEditButton {
+    font: italic 12px Verdana;
+    color: dimgrey;
+    cursor: pointer;
+}
+
+.infoHeader {
+    margin-top: 20px;
+    font: bold 14px Verdana;
+    text-decoration: underline;
+}
+
+.infoItem {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    grid-column-gap: 5px;
+    margin-top: 5px;
+}
+
+.itemHeader {
+    font: 12px Verdana;
+    color: dimgrey;
+}
+
+.itemText {
+    font: 12px Verdana;
+}

@@ -1,0 +1,26 @@
+.profilePhoto {
+    padding: 10px;
+    border-radius: 5px;
+    background-color: ivory;
+}
+
+.profilePhoto img {
+    width: 100%;
+}
+
+.profilePhoto label {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    padding: 5px;
+    font: 14px Verdana;
+    color: aliceblue;
+    background-color: royalblue;
+    border-radius: 3px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.profilePhoto input {
+    display: none;
+}

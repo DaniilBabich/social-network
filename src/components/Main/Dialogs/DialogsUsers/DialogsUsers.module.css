@@ -1,0 +1,34 @@
+.dialogsUsers {
+    display: grid;
+    align-content: start;
+    grid-row-gap: 10px;
+}
+
+.user {
+    display: grid;
+    grid-template-columns: 50px 1fr;
+    grid-column-gap: 10px;
+    align-items: center;
+    padding: 10px;
+    border-radius: 100px;
+    background-color: ivory;
+    cursor: pointer;
+}
+
+.activeUser {
+    border-right: 1px solid royalblue;
+    border-bottom: 1px solid royalblue;
+}
+
+.newMessageUser {
+    margin-bottom: 0;
+    background-color: cornsilk
+}
+
+.user img {
+    width: 100%;
+}
+
+.user div {
+    font: bold 12px Verdana;
+}

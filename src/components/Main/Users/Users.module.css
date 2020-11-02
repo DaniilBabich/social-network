@@ -1,0 +1,9 @@
+.users {
+    display: grid;
+    grid-row-gap: 10px;
+}
+
+.preloader {
+    width: 30px;
+    margin: 0 auto;
+}

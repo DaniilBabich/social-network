@@ -1,0 +1,36 @@
+.dialogsMessages {
+    display: grid;
+    align-content: end;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: ivory;
+}
+
+.message {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    grid-column-gap: 10px;
+    margin-bottom: 20px;
+}
+
+.name {
+    font: bold 12px Verdana;
+}
+
+.text {
+    font: 12px Verdana;
+}
+
+.dialogsMessages textarea {
+    width: 100%;
+    height: 100px;
+    resize: none;
+    border: 1px solid royalblue;
+    border-radius: 5px;
+    font: 12px Verdana;
+}
+
+.dialogsMessages textarea:focus {
+    outline: none;
+    border: 1px solid royalblue;
+}

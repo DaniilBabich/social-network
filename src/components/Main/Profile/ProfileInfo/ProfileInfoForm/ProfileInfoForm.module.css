@@ -1,0 +1,61 @@
+.profileInfoForm {
+    display: grid;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: ivory;
+}
+
+.forMovingButtonRight {
+    display: grid;
+    grid-template-columns: 1fr max-content;
+    align-items: end;
+}
+
+.profileSaveButton {
+    width: 80px;
+    margin-left: 5px;
+    padding: 3px;
+    font: 14px Verdana;
+    color: aliceblue;
+    background-color: royalblue;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer
+}
+
+.profileSaveButton:focus {
+    outline: none;
+}
+
+.infoHeader {
+    margin-top: 20px;
+    font: bold 14px Verdana;
+    text-decoration: underline;
+}
+
+.infoItem {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    grid-column-gap: 5px;
+    margin-top: 5px;
+}
+
+.itemHeader {
+    font: 12px Verdana;
+    color: dimgrey;
+}
+
+.infoItemLabel {
+    display: grid;
+    grid-template-columns: max-content max-content;
+    grid-column-gap: 5px;
+    align-items: center;
+    justify-self: start;
+    margin-top: 5px;
+}
+
+.profileInfoError {
+    margin-top: 5px;
+    font: 12px Verdana;
+    color: red;
+}

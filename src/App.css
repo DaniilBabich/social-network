@@ -1,0 +1,6 @@
+.appWrapper {
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 70px 1fr auto;
+    grid-row-gap: 20px;
+}

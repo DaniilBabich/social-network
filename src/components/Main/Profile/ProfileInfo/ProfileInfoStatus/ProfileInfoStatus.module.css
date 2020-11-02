@@ -1,0 +1,22 @@
+.profileInfoStatus {
+    margin-top: 5px;
+    font: italic 12px Verdana;
+    color: dimgrey;
+}
+
+.myProfileInfoStatus {
+    justify-self: start;
+    cursor: pointer;
+}
+
+.statusInput {
+    justify-self: start;
+    margin-top: 3px;
+    font: 12px Verdana;
+    border: 1px solid royalblue;
+}
+
+.statusInput:focus {
+    border: 1px solid royalblue;
+    outline: none;
+}

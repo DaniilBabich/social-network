@@ -1,0 +1,46 @@
+.usersUser {
+    display: grid;
+    grid-template-columns: 50px 1fr 80px;
+    grid-column-gap: 10px;
+    align-items: center;
+    padding: 10px;
+    background-color: ivory;
+    border-bottom: 1px solid royalblue;
+    border-radius: 5px;
+}
+
+.usersUser img {
+    width: 100%;
+}
+
+.name {
+    font: bold 14px Verdana;
+    color: black;
+}
+
+.name:hover {
+    text-decoration: underline;
+}
+
+.usersUser button {
+    padding: 3px;
+    width: 100%;
+    font: 14px Verdana;
+    border: 1px solid royalblue;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.usersUser button:focus {
+    outline: none;
+}
+
+.follow {
+    color: aliceblue;
+    background-color: royalblue;
+}
+
+.unfollow {
+    color: royalblue;
+    background-color: aliceblue;;
+}
