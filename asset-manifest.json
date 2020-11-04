@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/social-network/static/css/main.41f34985.chunk.css",
+    "main.css": "/social-network/static/css/main.babede06.chunk.css",
     "main.js": "/social-network/static/js/main.5a5d6ddd.chunk.js",
     "main.js.map": "/social-network/static/js/main.5a5d6ddd.chunk.js.map",
     "runtime-main.js": "/social-network/static/js/runtime-main.a948e851.js",
@@ -8,16 +8,16 @@
     "static/js/2.db8a65f1.chunk.js": "/social-network/static/js/2.db8a65f1.chunk.js",
     "static/js/2.db8a65f1.chunk.js.map": "/social-network/static/js/2.db8a65f1.chunk.js.map",
     "index.html": "/social-network/index.html",
-    "precache-manifest.c6425c01731780b1f7011bc86906d611.js": "/social-network/precache-manifest.c6425c01731780b1f7011bc86906d611.js",
+    "precache-manifest.141950e8d46d15a5978678df14402cf2.js": "/social-network/precache-manifest.141950e8d46d15a5978678df14402cf2.js",
     "service-worker.js": "/social-network/service-worker.js",
-    "static/css/main.41f34985.chunk.css.map": "/social-network/static/css/main.41f34985.chunk.css.map",
+    "static/css/main.babede06.chunk.css.map": "/social-network/static/css/main.babede06.chunk.css.map",
     "static/js/2.db8a65f1.chunk.js.LICENSE.txt": "/social-network/static/js/2.db8a65f1.chunk.js.LICENSE.txt",
     "static/media/defaultUserPhoto.png": "/social-network/static/media/defaultUserPhoto.baa67b12.png"
   },
   "entrypoints": [
     "static/js/runtime-main.a948e851.js",
     "static/js/2.db8a65f1.chunk.js",
-    "static/css/main.41f34985.chunk.css",
+    "static/css/main.babede06.chunk.css",
     "static/js/main.5a5d6ddd.chunk.js"
   ]
 }
