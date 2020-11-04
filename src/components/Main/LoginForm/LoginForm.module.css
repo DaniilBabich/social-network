@@ -10,7 +10,7 @@
     grid-template-columns: max-content max-content;
     grid-column-gap: 5px;
     align-items: center;
-    font: 14px Verdana;
+    font: 12px Verdana;
 }
 
 .loginForm button {
@@ -31,4 +31,19 @@
 .loginError {
     font: 12px Verdana;
     color: red;
+}
+
+.header {
+    margin-bottom: 10px;
+    font: bold 14px Verdana;
+    text-decoration: underline;
+}
+
+.email, .password {
+    margin-bottom: 5px;
+    font: 12px Verdana;
+}
+
+.loginForm span {
+    font: bold 12px Verdana;
 }

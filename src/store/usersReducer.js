@@ -6,12 +6,14 @@ let SET_CURRENT_PORTION = 'SET_CURRENT_PORTION';
 let TOGGLE_FOLLOWED = 'TOGGLE_FOLLOWED';
 let TOGGLE_FOLLOWINGS_IN_PROGRESS = 'TOGGLE_FOLLOWINGS_IN_PROGRESS';
 let DELETE_FRIEND = 'DELETE_FRIEND';
+let UPDATE_SEARCH = 'UPDATE_SEARCH';
 
 let initialState = {
     users: [],
     currentPortion: 1,
     portionUsersCount: 30,
-    followingsInProgress: []
+    followingsInProgress: [],
+    search: ''
 };
 
 let usersReducer = (state = initialState, action) => {
@@ -57,6 +59,11 @@ let usersReducer = (state = initialState, action) => {
                 ...state,
                 users: state.users.filter((user) => {return user.id !== action.user.id})
             }
+        case UPDATE_SEARCH:
+            return {
+                ...state,
+                search: action.search
+            }
         default:
             return state;
     }
@@ -67,6 +74,7 @@ export let setCurrentPortion = (currentPortion) => ({type: SET_CURRENT_PORTION, 
 export let toggleFollowed = (id, followed) => ({type: TOGGLE_FOLLOWED, id, followed});
 export let toggleFollowingsInProgress = (id, isFollowingInProgress) => ({type: TOGGLE_FOLLOWINGS_IN_PROGRESS, id, isFollowingInProgress});
 export let deleteFriend = (user) => ({type: DELETE_FRIEND, user})
+export let updateSearch = (search) => ({type: UPDATE_SEARCH, search});
 
 export let getUsers = (currentPortion, portionUsersCount) => {
     return (dispatch) => {
@@ -86,6 +94,18 @@ export let getFriends = () => {
             .then((response) => {
                 dispatch(setUsers(response.data.items));
                 dispatch(toggleIsFetching(false));
+            })
+    }
+}
+
+export let getFoundUsers = (search) => {
+    return (dispatch) => {
+        dispatch(toggleIsFetching(true));
+        usersAPI.getFoundUsers(search)
+            .then((response) => {
+                dispatch(setUsers(response.data.items));
+                dispatch(toggleIsFetching(false));
+                dispatch(updateSearch(''));
             })
     }
 }

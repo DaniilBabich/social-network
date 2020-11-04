@@ -79,7 +79,7 @@ const ProfileInfoForm = (props) => {
                     ?
                     props.error.map((error) => {
                         return (
-                            <div className={style.profileInfoError}>{error}</div>
+                            <div className={style.profileInfoError} key={error}>{error}</div>
                         )
                     })
                     :

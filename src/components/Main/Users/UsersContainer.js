@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {compose} from 'redux';
 import {withRouter} from 'react-router-dom';
-import {setUsers, setCurrentPortion, getUsers, follow, unfollow} from '../../../store/usersReducer';
+import {setUsers, setCurrentPortion, getUsers, follow, unfollow, updateSearch} from '../../../store/usersReducer';
 import Users from './Users';
 
 class UsersContainer extends React.Component {
@@ -37,11 +37,12 @@ let mapStateToProps = (state) => {
         currentPortion: state.users.currentPortion,
         portionUsersCount: state.users.portionUsersCount,
         isFetching: state.initialization.isFetching,
-        followingsInProgress: state.users.followingsInProgress
+        followingsInProgress: state.users.followingsInProgress,
+        search: state.users.search
     }
 }
 
 export default compose(
-    connect(mapStateToProps, {setUsers, setCurrentPortion, getUsers, follow, unfollow}),
+    connect(mapStateToProps, {setUsers, setCurrentPortion, getUsers, follow, unfollow, updateSearch}),
     withRouter
 )(UsersContainer)

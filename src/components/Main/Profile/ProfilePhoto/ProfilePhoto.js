@@ -16,7 +16,7 @@ const ProfilePhoto = (props) => {
                                onChange={(event) => {
                                    props.changePhoto(event.target.files[0])
                                }}/>
-                        Change Photo
+                        Change photo
                     </label>
                     :
                     null

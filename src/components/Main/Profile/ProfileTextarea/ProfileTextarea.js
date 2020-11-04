@@ -9,7 +9,7 @@ const ProfileTextarea = (props) => {
     return (
         <div className={style.profileTextarea}>
             <textarea value={props.postText} onChange={(event) => {props.updatePostText(event.target.value)}}/>
-            <button onClick={() => {if (props.postText) props.addPost()}}>Add Post</button>
+            <button onClick={() => {if (props.postText) props.addPost()}}>Add post</button>
         </div>
     );
 }

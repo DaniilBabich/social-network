@@ -38,7 +38,7 @@ const LoginForm = (props) => {
                     ?
                     props.error.map((error) => {
                         return (
-                            <div className={style.loginError}>{error}</div>
+                            <div className={style.loginError} key={error}>{error}</div>
                         )
                     })
                     :
@@ -60,6 +60,11 @@ const LoginForm = (props) => {
                     :
                     null
             }
+            <div>
+                <div className={style.header}>Use for testing:</div>
+                <div className={style.email}><span>Email: </span>free@samuraijs.com</div>
+                <div className={style.password}><span>Password: </span>free</div>
+            </div>
         </form>
     );
 }

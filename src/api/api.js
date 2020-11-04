@@ -14,6 +14,9 @@ export let usersAPI = {
     },
     getFriends() {
         return instance.get(`users?friend=true`)
+    },
+    getFoundUsers(search) {
+        return instance.get(`users?term=${search}`)
     }
 }
 

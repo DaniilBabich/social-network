@@ -5,6 +5,7 @@ import ProfileContainer from './Profile/ProfileContainer';
 import DialogsContainer from './Dialogs/DialogsContainer';
 import FriendsContainer from './Friends/FriendsContainer';
 import UsersContainer from './Users/UsersContainer';
+import FoundContainer from './Found/FoundContainer';
 import LoginReduxForm from './LoginForm/LoginForm';
 import style from './Main.module.css';
 
@@ -16,6 +17,7 @@ const Main = (props) => {
             <Route path={'/dialogs'} render={() => <DialogsContainer/>}/>
             <Route path={'/friends'} render={() => <FriendsContainer/>}/>
             <Route path={'/users'} render={() => <UsersContainer/>}/>
+            <Route path={'/found'} render={() => <FoundContainer/>}/>
             <Route path={'/login'} render={() => <LoginReduxForm
                 onSubmit={(data) => {props.login(data.email, data.password, data.rememberMe, data.captcha)}}
                 isAuth={props.isAuth}
