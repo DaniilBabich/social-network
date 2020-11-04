@@ -5,6 +5,7 @@ let SET_USERS = 'SET_USERS';
 let SET_CURRENT_PORTION = 'SET_CURRENT_PORTION';
 let TOGGLE_FOLLOWED = 'TOGGLE_FOLLOWED';
 let TOGGLE_FOLLOWINGS_IN_PROGRESS = 'TOGGLE_FOLLOWINGS_IN_PROGRESS';
+let DELETE_FRIEND = 'DELETE_FRIEND';
 
 let initialState = {
     users: [],
@@ -51,6 +52,11 @@ let usersReducer = (state = initialState, action) => {
                     ? [...state.followingsInProgress, action.id]
                     : state.followingsInProgress.filter((id) => {return id !== action.id})
             }
+        case DELETE_FRIEND:
+            return {
+                ...state,
+                users: state.users.filter((user) => {return user.id !== action.user.id})
+            }
         default:
             return state;
     }
@@ -60,11 +66,23 @@ export let setUsers = (users) => ({type: SET_USERS, users});
 export let setCurrentPortion = (currentPortion) => ({type: SET_CURRENT_PORTION, currentPortion});
 export let toggleFollowed = (id, followed) => ({type: TOGGLE_FOLLOWED, id, followed});
 export let toggleFollowingsInProgress = (id, isFollowingInProgress) => ({type: TOGGLE_FOLLOWINGS_IN_PROGRESS, id, isFollowingInProgress});
+export let deleteFriend = (user) => ({type: DELETE_FRIEND, user})
 
 export let getUsers = (currentPortion, portionUsersCount) => {
     return (dispatch) => {
         dispatch(toggleIsFetching(true));
         usersAPI.getUsers(currentPortion, portionUsersCount)
+            .then((response) => {
+                dispatch(setUsers(response.data.items));
+                dispatch(toggleIsFetching(false));
+            })
+    }
+}
+
+export let getFriends = () => {
+    return (dispatch) => {
+        dispatch(toggleIsFetching(true));
+        usersAPI.getFriends()
             .then((response) => {
                 dispatch(setUsers(response.data.items));
                 dispatch(toggleIsFetching(false));

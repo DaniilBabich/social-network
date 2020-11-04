@@ -11,6 +11,9 @@ let instance = axios.create({
 export let usersAPI = {
     getUsers(currentPortion, portionUsersCount) {
         return instance.get(`users?page=${currentPortion}&count=${portionUsersCount}`)
+    },
+    getFriends() {
+        return instance.get(`users?friend=true`)
     }
 }
 

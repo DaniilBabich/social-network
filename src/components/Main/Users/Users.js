@@ -9,6 +9,8 @@ const Users = (props) => {
         followingsInProgress={props.followingsInProgress}
         follow={props.follow}
         unfollow={props.unfollow}
+        deleteFriend={props.deleteFriend}
+        matchPath={props.match.path}
         key={user.id}
     />);
 

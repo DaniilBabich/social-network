@@ -1,7 +1,8 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {compose} from 'redux';
-import {setUsers, setCurrentPortion, toggleFollowed, toggleFollowingsInProgress, getUsers, follow, unfollow} from '../../../store/usersReducer';
+import {withRouter} from 'react-router-dom';
+import {setUsers, setCurrentPortion, getUsers, follow, unfollow} from '../../../store/usersReducer';
 import Users from './Users';
 
 class UsersContainer extends React.Component {
@@ -41,5 +42,6 @@ let mapStateToProps = (state) => {
 }
 
 export default compose(
-    connect(mapStateToProps, {setUsers, setCurrentPortion, toggleFollowed, toggleFollowingsInProgress, getUsers, follow, unfollow})
+    connect(mapStateToProps, {setUsers, setCurrentPortion, getUsers, follow, unfollow}),
+    withRouter
 )(UsersContainer)
