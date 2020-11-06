@@ -9,14 +9,11 @@ let instance = axios.create({
 })
 
 export let usersAPI = {
-    getUsers(currentPortion, portionUsersCount) {
-        return instance.get(`users?page=${currentPortion}&count=${portionUsersCount}`)
+    getUsers(currentPortion, portionUsersCount, isFriends) {
+        return instance.get(`users?page=${currentPortion}&count=${portionUsersCount}&friend=${isFriends}`)
     },
-    getFriends() {
-        return instance.get(`users?friend=true`)
-    },
-    getFoundUsers(search) {
-        return instance.get(`users?term=${search}`)
+    getFoundUsers(currentPortion, portionUsersCount, isFriends, search) {
+        return instance.get(`users?page=${currentPortion}&count=${portionUsersCount}&friend=${isFriends}&term=${search}`)
     }
 }
 

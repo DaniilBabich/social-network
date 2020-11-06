@@ -10,12 +10,10 @@ const Users = (props) => {
         followingsInProgress={props.followingsInProgress}
         follow={props.follow}
         unfollow={props.unfollow}
-        deleteFriend={props.deleteFriend}
-        matchPath={props.match.path}
         key={user.id}
     />);
 
-    if (props.search && props.match.path !== '/found') {
+    if (props.isSearching && props.match.path !== '/found') {
         return <Redirect to='/found'/>
     }
 
@@ -30,9 +28,12 @@ const Users = (props) => {
                         Find users:
                         <input className={style.searchInput}
                                type="text"
+                               autoFocus={true}
                                onKeyDown={(event) => {
                                    if (event.key === 'Enter' && event.target.value) {
-                                       props.updateSearch(event.target.value)
+                                       props.setSearch(event.target.value);
+                                       props.toggleIsSearching(true)
+                                       event.target.value = '';
                                    }
                                }}
                         />

@@ -5,15 +5,18 @@ let SET_USERS = 'SET_USERS';
 let SET_CURRENT_PORTION = 'SET_CURRENT_PORTION';
 let TOGGLE_FOLLOWED = 'TOGGLE_FOLLOWED';
 let TOGGLE_FOLLOWINGS_IN_PROGRESS = 'TOGGLE_FOLLOWINGS_IN_PROGRESS';
-let DELETE_FRIEND = 'DELETE_FRIEND';
-let UPDATE_SEARCH = 'UPDATE_SEARCH';
+let SET_SEARCH = 'SET_SEARCH';
+let SET_TOTAL_USERS_COUNT = 'SET_TOTAL_USERS_COUNT';
+let TOGGLE_IS_SEARCHING = 'TOGGLE_IS_SEARCHING';
 
 let initialState = {
     users: [],
+    totalUsersCount: null,
     currentPortion: 1,
     portionUsersCount: 30,
     followingsInProgress: [],
-    search: ''
+    search: null,
+    isSearching: false
 };
 
 let usersReducer = (state = initialState, action) => {
@@ -54,15 +57,20 @@ let usersReducer = (state = initialState, action) => {
                     ? [...state.followingsInProgress, action.id]
                     : state.followingsInProgress.filter((id) => {return id !== action.id})
             }
-        case DELETE_FRIEND:
-            return {
-                ...state,
-                users: state.users.filter((user) => {return user.id !== action.user.id})
-            }
-        case UPDATE_SEARCH:
+        case SET_SEARCH:
             return {
                 ...state,
                 search: action.search
+            }
+        case SET_TOTAL_USERS_COUNT:
+            return {
+                ...state,
+                totalUsersCount: action.totalUsersCount
+            }
+        case TOGGLE_IS_SEARCHING:
+            return {
+                ...state,
+                isSearching: action.isSearching
             }
         default:
             return state;
@@ -73,39 +81,31 @@ export let setUsers = (users) => ({type: SET_USERS, users});
 export let setCurrentPortion = (currentPortion) => ({type: SET_CURRENT_PORTION, currentPortion});
 export let toggleFollowed = (id, followed) => ({type: TOGGLE_FOLLOWED, id, followed});
 export let toggleFollowingsInProgress = (id, isFollowingInProgress) => ({type: TOGGLE_FOLLOWINGS_IN_PROGRESS, id, isFollowingInProgress});
-export let deleteFriend = (user) => ({type: DELETE_FRIEND, user})
-export let updateSearch = (search) => ({type: UPDATE_SEARCH, search});
+export let setSearch = (search) => ({type: SET_SEARCH, search});
+export let setTotalUsersCount = (totalUsersCount) => ({type: SET_TOTAL_USERS_COUNT, totalUsersCount});
+export let toggleIsSearching = (isSearching) => ({type: TOGGLE_IS_SEARCHING, isSearching});
 
-export let getUsers = (currentPortion, portionUsersCount) => {
+export let getUsers = (currentPortion, portionUsersCount, isFriend) => {
     return (dispatch) => {
         dispatch(toggleIsFetching(true));
-        usersAPI.getUsers(currentPortion, portionUsersCount)
+        usersAPI.getUsers(currentPortion, portionUsersCount, isFriend)
             .then((response) => {
                 dispatch(setUsers(response.data.items));
+                dispatch(setTotalUsersCount(response.data.totalCount));
                 dispatch(toggleIsFetching(false));
             })
     }
 }
 
-export let getFriends = () => {
+export let getFoundUsers = (currentPortion, portionUsersCount, isFriend, search) => {
     return (dispatch) => {
         dispatch(toggleIsFetching(true));
-        usersAPI.getFriends()
+        usersAPI.getFoundUsers(currentPortion, portionUsersCount, isFriend, search)
             .then((response) => {
                 dispatch(setUsers(response.data.items));
+                dispatch(setTotalUsersCount(response.data.totalCount));
                 dispatch(toggleIsFetching(false));
-            })
-    }
-}
-
-export let getFoundUsers = (search) => {
-    return (dispatch) => {
-        dispatch(toggleIsFetching(true));
-        usersAPI.getFoundUsers(search)
-            .then((response) => {
-                dispatch(setUsers(response.data.items));
-                dispatch(toggleIsFetching(false));
-                dispatch(updateSearch(''));
+                dispatch(toggleIsSearching(false));
             })
     }
 }

@@ -23,9 +23,6 @@ const UsersUser = (props) => {
                             })}
                             onClick={() => {
                                 props.unfollow(props.user.id);
-                                if (props.matchPath === '/friends') {
-                                    props.deleteFriend(props.user)
-                                }
                             }}>
                         Unfollow
                     </button>
