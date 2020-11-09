@@ -12,7 +12,6 @@ class FoundContainer extends React.Component {
     }
 
     componentWillUnmount() {
-        this.props.setSearch(null);
         this.props.setCurrentPortion(null);
         this.props.setUsers(null);
         window.removeEventListener('scroll', this.addPortion);

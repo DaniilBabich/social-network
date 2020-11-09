@@ -15,7 +15,7 @@ let initialState = {
     currentPortion: 1,
     portionUsersCount: 30,
     followingsInProgress: [],
-    search: null,
+    search: '',
     isSearching: false
 };
 
